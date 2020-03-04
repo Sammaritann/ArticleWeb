@@ -12,6 +12,5 @@ namespace ArticleWeb.DataAccess.ArticleDAO
         }
 
         public IMongoCollection<Article> Articles => context.Articles;
-
     }
 }

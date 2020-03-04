@@ -1,7 +1,7 @@
 ﻿using ArticleWeb.DataAccess.ArticleDAO;
 using ArticleWeb.DataAccess.CommentDAO;
-using MongoDB.Driver;
 
+using MongoDB.Driver;
 
 namespace ArticleWeb.DataAccess
 {
@@ -38,6 +38,5 @@ namespace ArticleWeb.DataAccess
         {
             return CommentsCollectionPrefix + articleId;
         }
-
     }
 }

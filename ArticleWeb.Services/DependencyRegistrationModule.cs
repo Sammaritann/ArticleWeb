@@ -1,9 +1,6 @@
-﻿using ArticleWeb.Services.CommentService;
-using ArticleWeb.Services.Models;
+﻿using ArticleWeb.Services.Models;
+
 using Autofac;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace ArticleWeb.Services
 {

@@ -1,15 +1,16 @@
 ﻿using ArticleWeb.DataAccess.ArticleDAO;
 using ArticleWeb.Services.Models;
 using ArticleWeb.Services.Models.Article;
+
 using MongoDB.Bson;
+
 using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace ArticleWeb.Services.Test.AericleService
 {
-    internal class FakeArticleService:IArticleService
+    internal class FakeArticleService : IArticleService
     {
         private readonly IArticleContext context;
 
@@ -38,14 +39,15 @@ namespace ArticleWeb.Services.Test.AericleService
             List<ViewArticleListItem> items = new List<ViewArticleListItem>();
             var article = context.Articles;
             var viewArticle = await article.FindAsync<Article>(new BsonDocument());
-            foreach (var item in viewArticle.Current )
+            foreach (var item in viewArticle.Current)
             {
-                items.Add(new ViewArticleListItem() {
-                    ArticleId=item.ArticleId.ToString(),
+                items.Add(new ViewArticleListItem()
+                {
+                    ArticleId = item.ArticleId.ToString(),
                     CreatedDate = item.CreatedDate,
                     CreatedUser = item.CreatedUser,
                     Title = item.Title
-                });;
+                }); ;
             }
 
             return items;

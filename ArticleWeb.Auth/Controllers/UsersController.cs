@@ -1,14 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using ArticleWeb.Auth.Service;
+﻿using ArticleWeb.Auth.Service;
 using ArticleWeb.Auth.User;
+
 using AspNetCore.Identity.Mongo.Model;
+
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace ArticleWeb.Auth.Controllers
 {
@@ -25,7 +26,6 @@ namespace ArticleWeb.Auth.Controllers
             _userManager = userManager;
             _signInManager = signInManager;
         }
-
 
         [HttpPost]
         [Route("register")]
@@ -70,30 +70,30 @@ namespace ArticleWeb.Auth.Controllers
         [Route("forgot")]
         public async Task<IActionResult> ForgotPassword(ForgotPasswordUser forgotPasswordUser)
         {
-            if(ModelState.IsValid)
+            if (ModelState.IsValid)
             {
                 var user = await _userManager.FindByEmailAsync(forgotPasswordUser.Email);
 
                 var code = await _userManager.GeneratePasswordResetTokenAsync(user);
                 var callbackUrl = Url.Action("ResetPassword", "Users", new { userId = user.Id, code = code }, protocol: HttpContext.Request.Scheme);
                 EmailService emailService = new EmailService();
-                await emailService.SendEmailAsync(forgotPasswordUser.Email,"ResetPassword",$"Reset Password  {callbackUrl}");
+                await emailService.SendEmailAsync(forgotPasswordUser.Email, "ResetPassword", $"Reset Password  {callbackUrl}");
                 return Ok();
             }
             return BadRequest();
         }
 
-       [HttpPost]
-       [Route("resetPassword")]
+        [HttpPost]
+        [Route("resetPassword")]
         public async Task<IActionResult> ResetPassword([FromBody] ResetPasswordUser reserPasswordUser)
         {
-            if(ModelState.IsValid)
+            if (ModelState.IsValid)
             {
                 var user = await _userManager.FindByIdAsync(reserPasswordUser.UserId);
 
                 var result = await _userManager.ResetPasswordAsync(user, reserPasswordUser.Code, reserPasswordUser.Password);
 
-                if(result.Succeeded)
+                if (result.Succeeded)
                 {
                     return Ok();
                 }

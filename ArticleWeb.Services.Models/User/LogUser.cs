@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace ArticleWeb.Services.Models.User
+﻿namespace ArticleWeb.Services.Models.User
 {
     public class LogUser
     {

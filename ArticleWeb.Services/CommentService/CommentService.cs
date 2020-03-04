@@ -2,12 +2,14 @@
 using ArticleWeb.Services.Exceptions;
 using ArticleWeb.Services.Models;
 using ArticleWeb.Services.Models.Comment;
+
 using AutoMapper;
+
 using MongoDB.Bson;
 using MongoDB.Driver;
+
 using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace ArticleWeb.Services.CommentService
@@ -72,10 +74,11 @@ namespace ArticleWeb.Services.CommentService
             await commentContext[articleId].UpdateManyAsync(c => c.CommentId == objectId, updateDocument);
         }
 
-        public async Task<ViewComment> AddCommentBelongArticleAsync(string articleId, UpdateComment updateComment)
+        public async Task<ViewComment> AddCommentBelongArticleAsync(string articleId, UpdateComment updateComment, string userName)
         {
             var commentDb = mapper.Map<Comment>(updateComment);
             commentDb.CreatedDate = DateTime.UtcNow;
+            commentDb.CreatedUser = userName;
             await commentContext[articleId].InsertOneAsync(commentDb);
             return mapper.Map<ViewComment>(commentDb);
         }

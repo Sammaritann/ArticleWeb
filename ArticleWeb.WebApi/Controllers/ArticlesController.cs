@@ -1,14 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using ArticleWeb.Services.Models;
+﻿using ArticleWeb.Services.Models;
 using ArticleWeb.Services.Models.Article;
 using ArticleWeb.Services.Models.Comment;
+
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Cors;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+
+using System;
+using System.Threading.Tasks;
 
 namespace ArticleWeb.WebApi.Controllers
 {
@@ -30,7 +29,6 @@ namespace ArticleWeb.WebApi.Controllers
         [Route("")]
         public async Task<IActionResult> GetArticles()
         {
-       
             var articles = await articleService.GetArticlesAsync();
 
             return Ok(articles);
@@ -52,7 +50,7 @@ namespace ArticleWeb.WebApi.Controllers
         {
             if (ModelState.IsValid)
             {
-                var article = await articleService.CreateArticleAsync(updateArticle);
+                var article = await articleService.CreateArticleAsync(updateArticle, User.Identity.Name);
                 var location = string.Format("/api/articles/{0}", article.ArticleId);
                 commentService.CreateCommentsCollection(article.ArticleId);
 
@@ -113,7 +111,7 @@ namespace ArticleWeb.WebApi.Controllers
         {
             if (ModelState.IsValid)
             {
-                var comment = await commentService.AddCommentBelongArticleAsync(id, updateComment);
+                var comment = await commentService.AddCommentBelongArticleAsync(id, updateComment, User.Identity.Name);
                 var location = string.Format("/api/articles/{0}/comments/{1}", id, comment.CommentId);
 
                 return Created(location, comment);
@@ -128,7 +126,6 @@ namespace ArticleWeb.WebApi.Controllers
         {
             if (ModelState.IsValid)
             {
-                var comment = await commentService.AddCommentBelongArticleAsync(id, updateComment);
                 await commentService.UpdateCommentBelongArticleAsync(id, commentId, updateComment);
 
                 return Ok();

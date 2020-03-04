@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace ArticleWeb.Auth
+﻿namespace ArticleWeb.Auth
 {
     public class RegUser
     {

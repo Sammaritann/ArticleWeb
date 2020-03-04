@@ -2,12 +2,16 @@
 using ArticleWeb.Services.Exceptions;
 using ArticleWeb.Services.Models;
 using ArticleWeb.Services.Models.Article;
+
 using AutoMapper;
+
+using Microsoft.AspNet.Identity;
+
 using MongoDB.Bson;
 using MongoDB.Driver;
+
 using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace ArticleWeb.Services.ArticleService
@@ -60,7 +64,7 @@ namespace ArticleWeb.Services.ArticleService
             return mapper.Map<ViewArticle>(articleDb);
         }
 
-        public async Task<ViewArticle> CreateArticleAsync(UpdateArticle updateArticle)
+        public async Task<ViewArticle> CreateArticleAsync(UpdateArticle updateArticle, string userName)
         {
             var articleCount = await articleContext.Articles.Find(x => x.Title == updateArticle.Title).CountDocumentsAsync();
 
@@ -71,6 +75,7 @@ namespace ArticleWeb.Services.ArticleService
 
             var articleDb = mapper.Map<Article>(updateArticle);
             articleDb.CreatedDate = DateTime.UtcNow;
+            articleDb.CreatedUser = userName;
             await articleContext.Articles.InsertOneAsync(articleDb);
             return mapper.Map<ViewArticle>(articleDb);
         }

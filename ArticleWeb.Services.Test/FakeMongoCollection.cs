@@ -1,18 +1,18 @@
-﻿using ArticleWeb.DataAccess.ArticleDAO;
-using MongoDB.Bson;
+﻿using MongoDB.Bson;
 using MongoDB.Bson.Serialization;
 using MongoDB.Driver;
+
 using Moq;
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
 namespace ArticleWeb.Services.Test
 {
-    class FakeMongoCollection<T>:IMongoCollection<T> where T:class
+    internal class FakeMongoCollection<T> : IMongoCollection<T> where T : class
     {
         private readonly List<T> list;
 
@@ -211,7 +211,7 @@ namespace ArticleWeb.Services.Test
         {
             var cursor = new Mock<IAsyncCursor<TProjection>>();
             cursor.Setup(c => c.Current).Returns(list.Cast<TProjection>());
-            return Task.Factory.StartNew(()=>cursor.Object);
+            return Task.Factory.StartNew(() => cursor.Object);
         }
 
         public Task<IAsyncCursor<TProjection>> FindAsync<TProjection>(IClientSessionHandle session, FilterDefinition<T> filter, FindOptions<T, TProjection> options = null, CancellationToken cancellationToken = default)

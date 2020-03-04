@@ -1,21 +1,24 @@
+using AspNetCore.Identity.Mongo;
 
 using Autofac;
-using FluentValidation.AspNetCore;
+
 using AutoMapper;
+
+using FluentValidation.AspNetCore;
+
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+
 using System;
 using System.Linq;
 using System.Reflection;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.IdentityModel.Tokens;
 using System.Text;
-using AspNetCore.Identity.Mongo;
-using AspNetCore.Identity.Mongo.Model;
 
 namespace ArticleWeb.WebApi
 {
@@ -23,7 +26,6 @@ namespace ArticleWeb.WebApi
     {
         public Startup(IConfiguration configuration)
         {
-
             Configuration = configuration;
         }
 
@@ -104,13 +106,10 @@ namespace ArticleWeb.WebApi
                     }
                 });
             });
-
-
         }
 
         public void ConfigureContainer(ContainerBuilder builder)
         {
-
             builder.RegisterAssemblyModules(AppDomain
                 .CurrentDomain
                 .GetAssemblies()
@@ -120,7 +119,6 @@ namespace ArticleWeb.WebApi
             builder.RegisterAssemblyModules(Assembly.Load("ArticleWeb.Services"));
             builder.RegisterAssemblyModules(Assembly.Load("ArticleWeb.DataAccess"));
             builder.RegisterAssemblyModules(Assembly.Load("ArticleWeb.Services.Models"));
-
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -137,7 +135,6 @@ namespace ArticleWeb.WebApi
 
             app.UseCors("Default");
 
-
             app.UseAuthentication();
             app.UseAuthorization();
 
@@ -145,7 +142,6 @@ namespace ArticleWeb.WebApi
             {
                 endpoints.MapControllers();
             });
-
 
             app.UseSwagger();
             app.UseSwaggerUI(c =>

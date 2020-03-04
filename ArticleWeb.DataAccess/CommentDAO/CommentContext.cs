@@ -13,10 +13,8 @@ namespace ArticleWeb.DataAccess.CommentDAO
 
         public IMongoCollection<Comment> this[string articleId]
         {
-            get => context.GetCollectionByArticalId(articleId); 
+            get => context.GetCollectionByArticalId(articleId);
         }
-
-       
 
         public void CreateCommentCollection(string id)
         {

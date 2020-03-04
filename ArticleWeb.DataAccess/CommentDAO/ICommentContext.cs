@@ -4,7 +4,7 @@ namespace ArticleWeb.DataAccess.CommentDAO
 {
     public interface ICommentContext
     {
-        IMongoCollection<Comment> this[string articleId] { get;}
+        IMongoCollection<Comment> this[string articleId] { get; }
 
         void CreateCommentCollection(string id);
 

@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Runtime.Serialization;
-using System.Text;
 
 namespace ArticleWeb.Services.Exceptions
 {
@@ -26,6 +24,5 @@ namespace ArticleWeb.Services.Exceptions
             : base(info, context)
         {
         }
-
     }
 }

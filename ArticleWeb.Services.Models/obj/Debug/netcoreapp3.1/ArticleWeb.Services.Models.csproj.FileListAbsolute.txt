@@ -6,3 +6,11 @@ D:\LayerArticleWeb\ArticleWeb.Services.Models\obj\Debug\netcoreapp3.1\ArticleWeb
 D:\LayerArticleWeb\ArticleWeb.Services.Models\obj\Debug\netcoreapp3.1\ArticleWeb.Services.Models.dll
 D:\LayerArticleWeb\ArticleWeb.Services.Models\obj\Debug\netcoreapp3.1\ArticleWeb.Services.Models.pdb
 D:\LayerArticleWeb\ArticleWeb.Services.Models\obj\Debug\netcoreapp3.1\ArticleWeb.Services.Models.csprojAssemblyReference.cache
+D:\ArticleWeb\ArticleWeb.Services.Models\bin\Debug\netcoreapp3.1\ArticleWeb.Services.Models.deps.json
+D:\ArticleWeb\ArticleWeb.Services.Models\bin\Debug\netcoreapp3.1\ArticleWeb.Services.Models.dll
+D:\ArticleWeb\ArticleWeb.Services.Models\bin\Debug\netcoreapp3.1\ArticleWeb.Services.Models.pdb
+D:\ArticleWeb\ArticleWeb.Services.Models\obj\Debug\netcoreapp3.1\ArticleWeb.Services.Models.csprojAssemblyReference.cache
+D:\ArticleWeb\ArticleWeb.Services.Models\obj\Debug\netcoreapp3.1\ArticleWeb.Services.Models.AssemblyInfoInputs.cache
+D:\ArticleWeb\ArticleWeb.Services.Models\obj\Debug\netcoreapp3.1\ArticleWeb.Services.Models.AssemblyInfo.cs
+D:\ArticleWeb\ArticleWeb.Services.Models\obj\Debug\netcoreapp3.1\ArticleWeb.Services.Models.dll
+D:\ArticleWeb\ArticleWeb.Services.Models\obj\Debug\netcoreapp3.1\ArticleWeb.Services.Models.pdb

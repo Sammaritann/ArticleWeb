@@ -1,14 +1,14 @@
-﻿using NUnit.Framework;
-using Moq;
-using ArticleWeb.DataAccess.ArticleDAO;
+﻿using ArticleWeb.DataAccess.ArticleDAO;
 using ArticleWeb.Services.Test.AericleService;
-using ArticleWeb.Services.Models.Article;
+
+using Moq;
+
+using NUnit.Framework;
 
 namespace ArticleWeb.Services.Test
 {
-    class ArticleServiceTest
+    internal class ArticleServiceTest
     {
-
         [Test]
         public void GetProductCategories_EmptyCollection_Test()
         {
@@ -31,8 +31,6 @@ namespace ArticleWeb.Services.Test
             Assert.AreEqual(2, amount);
         }
 
-
-
         [Test]
         public void GetInfo_SetWithTwoElements_TwoElementsListReturned()
         {
@@ -54,10 +52,6 @@ namespace ArticleWeb.Services.Test
             Assert.AreEqual(2, list.Count);
             Assert.IsTrue(list.Exists(x => x.ArticleId == "5e5c1572cbb45b429ccb9daf"));
             Assert.IsTrue(list.Exists(x => x.ArticleId == "5e3c1572cbb45b429ccb9daf"));
-
         }
-
-
-
     }
 }

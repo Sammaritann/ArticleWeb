@@ -1,20 +1,16 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using AspNetCore.Identity.Mongo;
 using AspNetCore.Identity.Mongo.Model;
+
+using FluentValidation.AspNetCore;
+
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using FluentValidation.AspNetCore;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
+
+using System;
 
 namespace ArticleWeb.Auth
 {
@@ -106,7 +102,6 @@ namespace ArticleWeb.Auth
             {
                 endpoints.MapControllers();
             });
-
 
             app.UseSwagger();
             app.UseSwaggerUI(c =>

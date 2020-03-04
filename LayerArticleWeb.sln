@@ -11,9 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ArticleWeb.Services", "Arti
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ArticleWeb.Services.Models", "ArticleWeb.Services.Models\ArticleWeb.Services.Models.csproj", "{0E9BCF70-2A28-48B9-9E17-10AB43D00566}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArticleWeb.Auth", "ArticleWeb.Auth\ArticleWeb.Auth.csproj", "{0FB397F3-A966-402B-9347-1B07C81F6E2C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ArticleWeb.Auth", "ArticleWeb.Auth\ArticleWeb.Auth.csproj", "{0FB397F3-A966-402B-9347-1B07C81F6E2C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArticleWeb.Services.Test", "ArticleWeb.Services.Test\ArticleWeb.Services.Test.csproj", "{8FD40F40-C2E1-4168-BD2C-08DFD0B4C8C9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ArticleWeb.Services.Test", "ArticleWeb.Services.Test\ArticleWeb.Services.Test.csproj", "{8FD40F40-C2E1-4168-BD2C-08DFD0B4C8C9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

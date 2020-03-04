@@ -1,0 +1,30 @@
+<div class="container">
+    <h2>Login</h2>
+    <form (ngSubmit)="onSubmit()" #hiveForm="ngForm">
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" style="width: 400px;" class="form-control" minlength="4" maxlength="60" required [(ngModel)]="logUser.userName"
+                name="name" #name="ngModel">
+            <div *ngIf="name.invalid && (name.dirty || name.touched)">
+                <div *ngIf="name.errors.required">UserName is required.</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" style="width: 400px;" class="form-control"  minlength="6" required [(ngModel)]="logUser.password" name="code" #code="ngModel">
+            <div *ngIf="code.invalid && (code.dirty || code.touched)" class="alert alert-danger">
+                <div *ngIf="code.errors.required">Password is required.</div>
+                <div *ngIf="code.errors.minlength">Password must be at least 6 characters long.</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+
+            <button type="submit" class="btn btn-primary">Login</button>
+
+            <button [routerLink]="['/register']" class="btn btn-link">Register</button>
+
+        </div>
+    </form>
+</div>

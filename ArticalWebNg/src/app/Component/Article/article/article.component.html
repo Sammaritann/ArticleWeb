@@ -1,0 +1,35 @@
+<div class="container">
+    <h2>{{article.title}}</h2>
+
+    <p class="text-light bg-dark" style="margin: 0px;">
+        {{article.articleText}}
+    </p>
+    <div class="d-flex text-white" style="margin-bottom: 10px;">
+        <div class="p-2 flex-grow-0 bg-primary ">{{article.createdUser}}</div>
+        <div class="p-2 bg-primary">{{article.createdDate}}</div>
+    </div>
+    <div>
+        <div *ngFor="let comment of comments" class="border border-dark">
+            <p>{{comment.createdUser}}</p>
+            <p style="margin: 0px;">{{comment.commentText}}</p>
+            <p style="margin: 0px;">Created data:{{comment.createdDate}}</p>
+        </div>
+    </div>
+    <div class="btn-toolbar" role="toolbar" aria-label="Action buttons" *ngIf="isAut && !isCommenting">
+        <div class="btn-group" role="group" aria-label="New group">
+            <button (click)="isCommenting=true" type="button" class="btn btn-primary">New Comment</button>
+        </div>
+    </div>
+    <form (ngSubmit)="onAddComment()" #commentForm="ngForm" *ngIf="isAut && isCommenting" style="margin-top: 10px;">
+        <textarea type="text" class="form-control" id="code" aria-describedby="codeLabel" maxlength="200" required
+            [(ngModel)]="updateComment.commentText" name="code" #code="ngModel">
+         </textarea>
+        <div class="btn-group" role="group">
+
+                <button (click)="isCommenting=false" class="btn btn-primary">Cancel</button>
+
+                <button type="submit" class="btn btn-primary">Save</button>
+
+        </div>
+    </form>
+</div>

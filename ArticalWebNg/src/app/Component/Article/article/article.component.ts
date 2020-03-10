@@ -17,7 +17,7 @@ export class ArticleComponent implements OnInit {
   comments:Comment[];
   isAut =false;
   isCommenting = false;
-  updateComment = new UpdateComment("","");
+  updateComment = new UpdateComment("");
   id:string;
   constructor(
     private authService:AuthenticationService,
@@ -41,12 +41,10 @@ export class ArticleComponent implements OnInit {
 
   onAddComment()
   {
-    this.updateComment.createdUser = this.authService.currentUserValue.userName;
     this.commentService.addComment(this.id,this.updateComment).subscribe(c=>{
       this.comments.push(c);
       this.isCommenting=false;
       this.updateComment.commentText="";
-      this.updateComment.createdUser="";
     });
   }
 

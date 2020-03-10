@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'https://localhost:44301/api',
+  apiUrl: 'https://articlewebwebapi20200304072354.azurewebsites.net/api',
+  authUrl:'https://articlewebauth20200304075043.azurewebsites.net/api',
 };
 
 /*

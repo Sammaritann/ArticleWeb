@@ -4,8 +4,17 @@ using System.Threading.Tasks;
 
 namespace ArticleWeb.Auth.Service
 {
+    /// <summary>
+    /// Represents email service.
+    /// </summary>
     public class EmailService
     {
+        /// <summary>
+        /// Sends the email asynchronous.
+        /// </summary>
+        /// <param name="email">The email.</param>
+        /// <param name="subject">The subject.</param>
+        /// <param name="message">The message.</param>
         public async Task SendEmailAsync(string email, string subject, string message)
         {
             MailAddress from = new MailAddress("testarticlemail@rambler.ru");

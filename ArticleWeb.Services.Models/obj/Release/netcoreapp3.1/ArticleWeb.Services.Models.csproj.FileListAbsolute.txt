@@ -1,0 +1,8 @@
+D:\ArticleWeb\ArticleWeb.Services.Models\bin\Release\netcoreapp3.1\ArticleWeb.Services.Models.deps.json
+D:\ArticleWeb\ArticleWeb.Services.Models\bin\Release\netcoreapp3.1\ArticleWeb.Services.Models.dll
+D:\ArticleWeb\ArticleWeb.Services.Models\bin\Release\netcoreapp3.1\ArticleWeb.Services.Models.pdb
+D:\ArticleWeb\ArticleWeb.Services.Models\obj\Release\netcoreapp3.1\ArticleWeb.Services.Models.csprojAssemblyReference.cache
+D:\ArticleWeb\ArticleWeb.Services.Models\obj\Release\netcoreapp3.1\ArticleWeb.Services.Models.AssemblyInfoInputs.cache
+D:\ArticleWeb\ArticleWeb.Services.Models\obj\Release\netcoreapp3.1\ArticleWeb.Services.Models.AssemblyInfo.cs
+D:\ArticleWeb\ArticleWeb.Services.Models\obj\Release\netcoreapp3.1\ArticleWeb.Services.Models.dll
+D:\ArticleWeb\ArticleWeb.Services.Models\obj\Release\netcoreapp3.1\ArticleWeb.Services.Models.pdb

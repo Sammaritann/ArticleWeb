@@ -14,18 +14,37 @@ using System.Threading.Tasks;
 
 namespace ArticleWeb.Services.CommentService
 {
+    /// <summary>
+    /// Represents comment service.
+    /// </summary>
+    /// <seealso cref="ArticleWeb.Services.Models.ICommentService" />
     internal class CommentService : ICommentService
     {
         private ICommentContext commentContext;
 
         private IMapper mapper;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CommentService"/> class.
+        /// </summary>
+        /// <param name="mapper">The mapper.</param>
+        /// <param name="commentContext">The comment context.</param>
+        /// <exception cref="ArgumentNullException">
+        /// commentContext
+        /// or
+        /// mapper
+        /// </exception>
         public CommentService(IMapper mapper, ICommentContext commentContext)
         {
             this.commentContext = commentContext ?? throw new ArgumentNullException(nameof(commentContext));
             this.mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
         }
 
+        /// <summary>
+        /// Gets the comments belong article asynchronous.
+        /// </summary>
+        /// <param name="articleId">The article identifier.</param>
+        /// <returns></returns>
         public async Task<List<ViewComment>> GetCommentsBelongArticleAsync(string articleId)
         {
             var collection = commentContext[articleId];
@@ -44,6 +63,13 @@ namespace ArticleWeb.Services.CommentService
             return comments;
         }
 
+        /// <summary>
+        /// Gets the comment belong article asynchronous.
+        /// </summary>
+        /// <param name="articleId">The article identifier.</param>
+        /// <param name="commentId">The comment identifier.</param>
+        /// <returns></returns>
+        /// <exception cref="RequestedResourceNotFoundException">comment</exception>
         public async Task<ViewComment> GetCommentBelongArticleAsync(string articleId, string commentId)
         {
             var objectId = ObjectId.Parse(commentId);
@@ -57,6 +83,13 @@ namespace ArticleWeb.Services.CommentService
             return mapper.Map<ViewComment>(commentDb);
         }
 
+        /// <summary>
+        /// Updates the comment belong article asynchronous.
+        /// </summary>
+        /// <param name="articleId">The article identifier.</param>
+        /// <param name="commentId">The comment identifier.</param>
+        /// <param name="updateComment">The update comment.</param>
+        /// <exception cref="RequestedResourceNotFoundException">comment</exception>
         public async Task UpdateCommentBelongArticleAsync(string articleId, string commentId, UpdateComment updateComment)
         {
             var objectId = ObjectId.Parse(commentId);
@@ -74,6 +107,13 @@ namespace ArticleWeb.Services.CommentService
             await commentContext[articleId].UpdateManyAsync(c => c.CommentId == objectId, updateDocument);
         }
 
+        /// <summary>
+        /// Adds the comment belong article asynchronous.
+        /// </summary>
+        /// <param name="articleId">The article identifier.</param>
+        /// <param name="updateComment">The update comment.</param>
+        /// <param name="userName">Name of the user.</param>
+        /// <returns></returns>
         public async Task<ViewComment> AddCommentBelongArticleAsync(string articleId, UpdateComment updateComment, string userName)
         {
             var commentDb = mapper.Map<Comment>(updateComment);
@@ -83,6 +123,11 @@ namespace ArticleWeb.Services.CommentService
             return mapper.Map<ViewComment>(commentDb);
         }
 
+        /// <summary>
+        /// Deletes the comment belong article asynchronous.
+        /// </summary>
+        /// <param name="articleId">The article identifier.</param>
+        /// <param name="commentId">The comment identifier.</param>
         public async Task DeleteCommentBelongArticleAsync(string articleId, string commentId)
         {
             var objectId = ObjectId.Parse(commentId);
@@ -90,11 +135,19 @@ namespace ArticleWeb.Services.CommentService
             await commentContext[articleId].DeleteOneAsync(a => a.CommentId == objectId);
         }
 
+        /// <summary>
+        /// Creates the comments collection.
+        /// </summary>
+        /// <param name="id">The identifier.</param>
         public void CreateCommentsCollection(string id)
         {
             commentContext.CreateCommentCollection(id);
         }
 
+        /// <summary>
+        /// Deletes the comment collection.
+        /// </summary>
+        /// <param name="id">The identifier.</param>
         public void DeleteCommentCollection(string id)
         {
             commentContext.DeleteCommentCollection(id);

@@ -16,18 +16,36 @@ using System.Threading.Tasks;
 
 namespace ArticleWeb.Services.ArticleService
 {
+    /// <summary>
+    /// Represents article service.
+    /// </summary>
+    /// <seealso cref="ArticleWeb.Services.Models.IArticleService" />
     internal class ArticleService : IArticleService
     {
         private IArticleContext articleContext;
 
         private IMapper mapper;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ArticleService"/> class.
+        /// </summary>
+        /// <param name="articleContext">The article context.</param>
+        /// <param name="mapper">The mapper.</param>
+        /// <exception cref="ArgumentNullException">
+        /// articleContext
+        /// or
+        /// articleContext
+        /// </exception>
         public ArticleService(IArticleContext articleContext, IMapper mapper)
         {
             this.articleContext = articleContext ?? throw new ArgumentNullException(nameof(articleContext));
             this.mapper = mapper ?? throw new ArgumentNullException(nameof(articleContext));
         }
 
+        /// <summary>
+        /// Gets the articles asynchronous.
+        /// </summary>
+        /// <returns></returns>
         public async Task<List<ViewArticleListItem>> GetArticlesAsync()
         {
             List<ViewArticleListItem> articles = new List<ViewArticleListItem>();
@@ -51,6 +69,12 @@ namespace ArticleWeb.Services.ArticleService
             return articles;
         }
 
+        /// <summary>
+        /// Gets the article asynchronous.
+        /// </summary>
+        /// <param name="id">The identifier.</param>
+        /// <returns></returns>
+        /// <exception cref="RequestedResourceNotFoundException">article</exception>
         public async Task<ViewArticle> GetArticleAsync(string id)
         {
             var objectId = ObjectId.Parse(id);
@@ -64,6 +88,13 @@ namespace ArticleWeb.Services.ArticleService
             return mapper.Map<ViewArticle>(articleDb);
         }
 
+        /// <summary>
+        /// Creates the article asynchronous.
+        /// </summary>
+        /// <param name="updateArticle">The update article.</param>
+        /// <param name="userName">Name of the user.</param>
+        /// <returns></returns>
+        /// <exception cref="RequestedResourceHasConflictException">Title</exception>
         public async Task<ViewArticle> CreateArticleAsync(UpdateArticle updateArticle, string userName)
         {
             var articleCount = await articleContext.Articles.Find(x => x.Title == updateArticle.Title).CountDocumentsAsync();
@@ -80,6 +111,12 @@ namespace ArticleWeb.Services.ArticleService
             return mapper.Map<ViewArticle>(articleDb);
         }
 
+        /// <summary>
+        /// Updates the article asynchronous.
+        /// </summary>
+        /// <param name="id">The identifier.</param>
+        /// <param name="updateArticle">The update article.</param>
+        /// <exception cref="RequestedResourceNotFoundException">article</exception>
         public async Task UpdateArticleAsync(string id, UpdateArticle updateArticle)
         {
             var objectId = ObjectId.Parse(id);
@@ -97,6 +134,10 @@ namespace ArticleWeb.Services.ArticleService
             await articleContext.Articles.UpdateManyAsync(a => a.ArticleId == objectId, updateDocument);
         }
 
+        /// <summary>
+        /// Deletes the article asynchronous.
+        /// </summary>
+        /// <param name="id">The identifier.</param>
         public async Task DeleteArticleAsync(string id)
         {
             var objectId = ObjectId.Parse(id);

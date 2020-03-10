@@ -72,12 +72,12 @@ namespace ArticleWeb.Auth.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = await _userManager.FindByEmailAsync(forgotPasswordUser.Email);
+                var user = await _userManager.FindByNameAsync(forgotPasswordUser.UserName);
 
                 var code = await _userManager.GeneratePasswordResetTokenAsync(user);
                 var callbackUrl = Url.Action("ResetPassword", "Users", new { userId = user.Id, code = code }, protocol: HttpContext.Request.Scheme);
                 EmailService emailService = new EmailService();
-                await emailService.SendEmailAsync(forgotPasswordUser.Email, "ResetPassword", $"Reset Password  {callbackUrl}");
+                await emailService.SendEmailAsync(user.Email, "ResetPassword", $"Reset Password  {callbackUrl}");
                 return Ok();
             }
             return BadRequest();

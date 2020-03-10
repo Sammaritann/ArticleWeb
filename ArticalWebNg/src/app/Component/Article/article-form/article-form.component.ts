@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UpdateArticle } from 'src/app/model/Article/updateArticle';
 import { ActivatedRoute, Router } from '@angular/router';
-import { AuthenticationService } from 'src/app/Services/authentication.service';
 import { ArticleService } from 'src/app/Services/article.service';
 
 
@@ -12,7 +11,7 @@ import { ArticleService } from 'src/app/Services/article.service';
 })
 export class ArticleFormComponent implements OnInit {
 
-  updateArticle = new UpdateArticle("","","");
+  updateArticle = new UpdateArticle("","");
   existed = false;
   id:string;
   constructor(
@@ -26,7 +25,6 @@ export class ArticleFormComponent implements OnInit {
       if (p['id'] === undefined) return;
       this.articleService.getArticle(p['id']).subscribe(a => {
         this.updateArticle.articleText = a.articleText;
-        this.updateArticle.createdUser = a.createdUser;
         this.updateArticle.title = a.title;
         this.id=p['id'];
       });
@@ -50,7 +48,6 @@ export class ArticleFormComponent implements OnInit {
     }
     else
     {
-      this.updateArticle.createdUser = JSON.parse(localStorage.getItem('currentUser')).userName;
       this.articleService.addArtcile(this.updateArticle).subscribe(p=>this.navigateToMain());
     }
   }

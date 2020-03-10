@@ -2513,6 +2513,7 @@
       "ArticleWeb.DataAccess/1.0.0": {
         "dependencies": {
           "Autofac": "5.1.2",
+          "Microsoft.Extensions.Configuration": "3.1.2",
           "MongoDB.Driver": "2.10.2"
         },
         "runtime": {

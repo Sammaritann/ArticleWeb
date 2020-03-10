@@ -24,6 +24,11 @@ namespace ArticleWeb.Services.Test.AericleService
             throw new NotImplementedException();
         }
 
+        public Task<ViewArticle> CreateArticleAsync(UpdateArticle updateArticle, string userName)
+        {
+            throw new NotImplementedException();
+        }
+
         public Task DeleteArticleAsync(string id)
         {
             throw new NotImplementedException();

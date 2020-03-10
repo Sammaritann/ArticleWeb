@@ -3,6 +3,10 @@ using System.Runtime.Serialization;
 
 namespace ArticleWeb.Services.Exceptions
 {
+    /// <summary>
+    /// Represents request resource exception.
+    /// </summary>
+    /// <seealso cref="System.Exception" />
     [Serializable]
     public class RequestedResourceException : Exception
     {

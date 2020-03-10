@@ -1,0 +1,13 @@
+D:\ArticleWeb\ArticleWeb.Services\bin\Release\netcoreapp3.1\ArticleWeb.Services.deps.json
+D:\ArticleWeb\ArticleWeb.Services\bin\Release\netcoreapp3.1\ArticleWeb.Services.dll
+D:\ArticleWeb\ArticleWeb.Services\bin\Release\netcoreapp3.1\ArticleWeb.Services.pdb
+D:\ArticleWeb\ArticleWeb.Services\bin\Release\netcoreapp3.1\ArticleWeb.DataAccess.dll
+D:\ArticleWeb\ArticleWeb.Services\bin\Release\netcoreapp3.1\ArticleWeb.Services.Models.dll
+D:\ArticleWeb\ArticleWeb.Services\bin\Release\netcoreapp3.1\ArticleWeb.DataAccess.pdb
+D:\ArticleWeb\ArticleWeb.Services\bin\Release\netcoreapp3.1\ArticleWeb.Services.Models.pdb
+D:\ArticleWeb\ArticleWeb.Services\obj\Release\netcoreapp3.1\ArticleWeb.Services.csprojAssemblyReference.cache
+D:\ArticleWeb\ArticleWeb.Services\obj\Release\netcoreapp3.1\ArticleWeb.Services.AssemblyInfoInputs.cache
+D:\ArticleWeb\ArticleWeb.Services\obj\Release\netcoreapp3.1\ArticleWeb.Services.AssemblyInfo.cs
+D:\ArticleWeb\ArticleWeb.Services\obj\Release\netcoreapp3.1\ArticleWeb.Services.csproj.CopyComplete
+D:\ArticleWeb\ArticleWeb.Services\obj\Release\netcoreapp3.1\ArticleWeb.Services.dll
+D:\ArticleWeb\ArticleWeb.Services\obj\Release\netcoreapp3.1\ArticleWeb.Services.pdb

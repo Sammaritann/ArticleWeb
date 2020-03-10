@@ -129,6 +129,8 @@ namespace ArticleWeb.WebApi
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseMiddleware<ExceptionHandlerMiddleware>();
+
             app.UseHttpsRedirection();
 
             app.UseRouting();

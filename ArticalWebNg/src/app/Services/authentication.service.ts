@@ -7,6 +7,7 @@ import { LogUser } from '../model/user-model/logUser';
 import { ActivatedRoute, Router } from '@angular/router';
 import { environment } from 'src/environments/environment';
 import { RegUser } from '../model/user-model/regUser';
+import { ResetPasswordUser } from '../model/user-model/reserPasswrodUser';
 
 
 @Injectable({
@@ -34,7 +35,7 @@ export class AuthenticationService {
 
 
 login(logUser:LogUser) {
-   return this.http.post<User>(`${environment.apiUrl}/users/login`,logUser).pipe(map(user => {
+   return this.http.post<User>(`${environment.authUrl}/users/login`,logUser).pipe(map(user => {
 
     if (user && user.token) {
         
@@ -48,7 +49,7 @@ login(logUser:LogUser) {
 
 register(regUser:RegUser)
 {
-  return this.http.post<User>(`${environment.apiUrl}/users/register`,regUser).pipe(map(user => {
+  return this.http.post<User>(`${environment.authUrl}/users/register`,regUser).pipe(map(user => {
 
     if (user && user.token) {
         
@@ -59,6 +60,12 @@ register(regUser:RegUser)
     return user;
 }));
   
+}
+
+resetPasswrod(logUser:LogUser):Observable<any>
+{
+  var resUser = new ResetPasswordUser(logUser.userName);
+  return this.http.post(`${environment.authUrl}/users/resetPassword`,resUser);
 }
 
 logout() {

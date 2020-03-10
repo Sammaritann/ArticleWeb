@@ -1,0 +1,8 @@
+D:\ArticleWeb\ArticleWeb.DataAccess\bin\Release\netcoreapp3.1\ArticleWeb.DataAccess.deps.json
+D:\ArticleWeb\ArticleWeb.DataAccess\bin\Release\netcoreapp3.1\ArticleWeb.DataAccess.dll
+D:\ArticleWeb\ArticleWeb.DataAccess\bin\Release\netcoreapp3.1\ArticleWeb.DataAccess.pdb
+D:\ArticleWeb\ArticleWeb.DataAccess\obj\Release\netcoreapp3.1\ArticleWeb.DataAccess.csprojAssemblyReference.cache
+D:\ArticleWeb\ArticleWeb.DataAccess\obj\Release\netcoreapp3.1\ArticleWeb.DataAccess.AssemblyInfoInputs.cache
+D:\ArticleWeb\ArticleWeb.DataAccess\obj\Release\netcoreapp3.1\ArticleWeb.DataAccess.AssemblyInfo.cs
+D:\ArticleWeb\ArticleWeb.DataAccess\obj\Release\netcoreapp3.1\ArticleWeb.DataAccess.dll
+D:\ArticleWeb\ArticleWeb.DataAccess\obj\Release\netcoreapp3.1\ArticleWeb.DataAccess.pdb

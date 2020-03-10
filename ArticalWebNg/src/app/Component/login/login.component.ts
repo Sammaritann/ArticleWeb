@@ -39,6 +39,11 @@ export class LoginComponent implements OnInit {
         
   }
 
+  resetPassword()
+  {
+    this.authenticationService.resetPasswrod(this.logUser).subscribe( x=>this.router.navigate(['/']));
+  }
+
   onCancel()
   {
 

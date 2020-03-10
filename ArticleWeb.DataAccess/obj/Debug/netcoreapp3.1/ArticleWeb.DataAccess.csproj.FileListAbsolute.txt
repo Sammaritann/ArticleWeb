@@ -6,3 +6,11 @@ D:\LayerArticleWeb\ArticleWeb.DataAccess\bin\Debug\netcoreapp3.1\ArticleWeb.Data
 D:\LayerArticleWeb\ArticleWeb.DataAccess\obj\Debug\netcoreapp3.1\ArticleWeb.DataAccess.dll
 D:\LayerArticleWeb\ArticleWeb.DataAccess\obj\Debug\netcoreapp3.1\ArticleWeb.DataAccess.pdb
 D:\LayerArticleWeb\ArticleWeb.DataAccess\obj\Debug\netcoreapp3.1\ArticleWeb.DataAccess.csprojAssemblyReference.cache
+D:\ArticleWeb\ArticleWeb.DataAccess\bin\Debug\netcoreapp3.1\ArticleWeb.DataAccess.deps.json
+D:\ArticleWeb\ArticleWeb.DataAccess\bin\Debug\netcoreapp3.1\ArticleWeb.DataAccess.dll
+D:\ArticleWeb\ArticleWeb.DataAccess\bin\Debug\netcoreapp3.1\ArticleWeb.DataAccess.pdb
+D:\ArticleWeb\ArticleWeb.DataAccess\obj\Debug\netcoreapp3.1\ArticleWeb.DataAccess.csprojAssemblyReference.cache
+D:\ArticleWeb\ArticleWeb.DataAccess\obj\Debug\netcoreapp3.1\ArticleWeb.DataAccess.AssemblyInfoInputs.cache
+D:\ArticleWeb\ArticleWeb.DataAccess\obj\Debug\netcoreapp3.1\ArticleWeb.DataAccess.AssemblyInfo.cs
+D:\ArticleWeb\ArticleWeb.DataAccess\obj\Debug\netcoreapp3.1\ArticleWeb.DataAccess.dll
+D:\ArticleWeb\ArticleWeb.DataAccess\obj\Debug\netcoreapp3.1\ArticleWeb.DataAccess.pdb
